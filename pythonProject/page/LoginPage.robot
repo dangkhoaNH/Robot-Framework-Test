@@ -1,11 +1,7 @@
 *** Settings ***
-Library        Selenium2Library
+Resource        ../page/source.robot
 
 *** Variables ***
-${base_url}              http://localhost:3000/login
-${browser}               chrome
-${second}                0.5s
-${delay}                 2.5s
 ${usernameInput}         xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[1]/input
 ${passwordInput}         xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[2]/input
 ${loginButton}           xpath://*[@id="root"]/div/div[3]/div/form/div/div[3]/button
