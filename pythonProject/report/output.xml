@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.6 on darwin)" generated="20230421 16:17:13.708" rpa="false" schemaversion="3">
+<suite id="s1" name="TC Login" source="/Users/o_vy.p/Desktop/Robot-Framework-Test/pythonProject/testcase/TC_Login.robot">
+<test id="s1-t1" name="TC01 - Login_TestSuccess" line="5">
+<kw name="Open Browser To Page" library="LoginPage">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230421 16:17:13.945" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/login'.</msg>
+<status status="PASS" starttime="20230421 16:17:13.945" endtime="20230421 16:17:15.821"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230421 16:17:15.821" endtime="20230421 16:17:16.279"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>${second}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230421 16:17:16.279" endtime="20230421 16:17:16.280"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:13.944" endtime="20230421 16:17:16.280"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${usernameInput}</arg>
+<arg>adminuser</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:16.280" level="INFO">Typing text 'adminuser' into text field 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[1]/input'.</msg>
+<status status="PASS" starttime="20230421 16:17:16.280" endtime="20230421 16:17:17.906"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>${passwordInput}</arg>
+<arg>admin</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:17.909" level="INFO">Typing password into text field 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[2]/input'.</msg>
+<msg timestamp="20230421 16:17:18.957" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230421 16:17:19.503" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230421 16:17:17.908" endtime="20230421 16:17:19.504"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${loginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:19.506" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230421 16:17:19.505" endtime="20230421 16:17:20.555"/>
+</kw>
+<kw name="Wait Until Location Is" library="Selenium2Library">
+<arg>${home_url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230421 16:17:20.555" endtime="20230421 16:17:21.063"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${notifySuccess}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230421 16:17:21.064" endtime="20230421 16:17:22.106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${alertSuccess}\[contains(@class, 'Toastify__toast--success')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230421 16:17:22.107" endtime="20230421 16:17:23.149"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${message}</var>
+<arg>${notifySuccess}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:24.191" level="INFO">${message} = Success</msg>
+<status status="PASS" starttime="20230421 16:17:23.151" endtime="20230421 16:17:24.191"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Success</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230421 16:17:24.192" endtime="20230421 16:17:24.193"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230421 16:17:24.194" endtime="20230421 16:17:24.770"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:13.944" endtime="20230421 16:17:24.771"/>
+</test>
+<test id="s1-t2" name="TC02 - Login_TestFail-username+password" line="16">
+<kw name="Open Browser To Page" library="LoginPage">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230421 16:17:24.772" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/login'.</msg>
+<status status="PASS" starttime="20230421 16:17:24.772" endtime="20230421 16:17:27.010"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230421 16:17:27.010" endtime="20230421 16:17:27.975"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>${second}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230421 16:17:27.976" endtime="20230421 16:17:27.977"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:24.772" endtime="20230421 16:17:27.978"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${usernameInput}</arg>
+<arg>abcdef</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:27.979" level="INFO">Typing text 'abcdef' into text field 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[1]/input'.</msg>
+<status status="PASS" starttime="20230421 16:17:27.978" endtime="20230421 16:17:29.619"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>${passwordInput}</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:29.621" level="INFO">Typing password into text field 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[2]/input'.</msg>
+<msg timestamp="20230421 16:17:30.658" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230421 16:17:31.203" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230421 16:17:29.620" endtime="20230421 16:17:31.204"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${loginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:31.207" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230421 16:17:31.205" endtime="20230421 16:17:32.254"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230421 16:17:34.758" level="INFO">Slept 2 seconds 500 milliseconds</msg>
+<status status="PASS" starttime="20230421 16:17:32.255" endtime="20230421 16:17:34.759"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${notifyLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230421 16:17:34.760" endtime="20230421 16:17:35.803"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${alertLogin}\[contains(@class, 'Toastify__toast--error')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230421 16:17:35.804" endtime="20230421 16:17:36.842"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${message}</var>
+<arg>${notifyLogin}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:37.884" level="INFO">${message} = Please Enter valid username</msg>
+<status status="PASS" starttime="20230421 16:17:36.843" endtime="20230421 16:17:37.884"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Please Enter valid username</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230421 16:17:37.885" endtime="20230421 16:17:37.887"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230421 16:17:37.887" endtime="20230421 16:17:38.467"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:24.771" endtime="20230421 16:17:38.468"/>
+</test>
+<test id="s1-t3" name="TC03 - Login_TestFail-username" line="28">
+<kw name="Open Browser To Page" library="LoginPage">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230421 16:17:38.470" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/login'.</msg>
+<status status="PASS" starttime="20230421 16:17:38.469" endtime="20230421 16:17:40.868"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230421 16:17:40.868" endtime="20230421 16:17:41.827"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>${second}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230421 16:17:41.828" endtime="20230421 16:17:41.829"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:38.469" endtime="20230421 16:17:41.830"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${usernameInput}</arg>
+<arg>adminuser</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:41.832" level="INFO">Typing text 'adminuser' into text field 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[1]/input'.</msg>
+<status status="PASS" starttime="20230421 16:17:41.831" endtime="20230421 16:17:43.472"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>${passwordInput}</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:43.475" level="INFO">Typing password into text field 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[2]/div[2]/input'.</msg>
+<msg timestamp="20230421 16:17:44.521" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230421 16:17:45.058" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230421 16:17:43.473" endtime="20230421 16:17:45.059"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${loginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:45.060" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230421 16:17:45.059" endtime="20230421 16:17:46.110"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230421 16:17:48.612" level="INFO">Slept 2 seconds 500 milliseconds</msg>
+<status status="PASS" starttime="20230421 16:17:46.111" endtime="20230421 16:17:48.613"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${notifyLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230421 16:17:48.614" endtime="20230421 16:17:49.658"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${alertLogin}\[contains(@class, 'Toastify__toast--error')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230421 16:17:49.659" endtime="20230421 16:17:50.688"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${message}</var>
+<arg>${notifyLogin}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:51.726" level="INFO">${message} = Please Enter valid credentials</msg>
+<status status="PASS" starttime="20230421 16:17:50.689" endtime="20230421 16:17:51.726"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Password is incorrect, please try again!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230421 16:17:51.728" level="FAIL">Please Enter valid credentials != Password is incorrect, please try again!</msg>
+<status status="FAIL" starttime="20230421 16:17:51.727" endtime="20230421 16:17:51.729"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20230421 16:17:51.729" endtime="20230421 16:17:51.729"/>
+</kw>
+<status status="FAIL" starttime="20230421 16:17:38.468" endtime="20230421 16:17:51.730">Please Enter valid credentials != Password is incorrect, please try again!</status>
+</test>
+<test id="s1-t4" name="TC04 - Register_OpenPage" line="40">
+<kw name="Open Browser To Page" library="LoginPage">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230421 16:17:51.732" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/login'.</msg>
+<status status="PASS" starttime="20230421 16:17:51.732" endtime="20230421 16:17:54.012"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230421 16:17:54.012" endtime="20230421 16:17:54.970"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>${second}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230421 16:17:54.970" endtime="20230421 16:17:54.971"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:51.731" endtime="20230421 16:17:54.971"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${registerButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230421 16:17:54.971" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[3]/div/form/div/div[3]/a'.</msg>
+<status status="PASS" starttime="20230421 16:17:54.971" endtime="20230421 16:17:56.035"/>
+</kw>
+<kw name="Wait Until Location Is" library="Selenium2Library">
+<arg>${register_url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230421 16:17:56.037" endtime="20230421 16:17:56.549"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230421 16:17:56.550" endtime="20230421 16:17:57.133"/>
+</kw>
+<status status="PASS" starttime="20230421 16:17:51.731" endtime="20230421 16:17:57.133"/>
+</test>
+<status status="FAIL" starttime="20230421 16:17:13.711" endtime="20230421 16:17:57.134"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="TC Login">TC Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
