@@ -10,9 +10,3 @@ ${notifyLogin}           xpath://*[@id="root"]/div/div[1]/div/div/div[1]/div[2]
 ${alertLogin}            xpath://*[@id="root"]/div/div[1]/div/div
 ${notifySuccess}         xpath:/html/body/div/div/div[1]/div/div/div[1]/div[2]
 ${alertSuccess}          xpath:/html/body/div/div/div[1]/div/div
-
-*** Keywords ***
-Open Browser To Page
-    Open Browser              ${base_url}        ${browser}
-    Maximize Browser Window
-    Set Selenium Speed        ${second}

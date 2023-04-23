@@ -3,7 +3,7 @@ Resource        ../page/LoginPage.robot
 
 *** Test Cases ***
 TC01 - Login_TestSuccess
-    Open Browser To Page
+    Open Browser To LoginPage
     Input Text            ${usernameInput}            adminuser
     Input Password        ${passwordInput}            admin
     Click Element         ${loginButton}
@@ -14,7 +14,7 @@ TC01 - Login_TestSuccess
     Should be equal  ${message}  Success 
     Close Browser
 TC02 - Login_TestFail-username+password
-    Open Browser To Page
+    Open Browser To LoginPage
     Input Text            ${usernameInput}            abcdef
     Input Password        ${passwordInput}            123456
     Click Element         ${loginButton}
@@ -26,7 +26,7 @@ TC02 - Login_TestFail-username+password
     Close Browser
 
 TC03 - Login_TestFail-username
-    Open Browser To Page
+    Open Browser To LoginPage
     Input Text            ${usernameInput}            adminuser
     Input Password        ${passwordInput}            123456
     Click Element         ${loginButton}
@@ -38,7 +38,24 @@ TC03 - Login_TestFail-username
     Close Browser
 
 TC04 - Register_OpenPage
-    Open Browser To Page
+    Open Browser To LoginPage
     Click Element                    ${registerButton}
     Wait Until Location Is           ${register_url}
+    Close Browser
+
+TC05 - Handle_InputTxtb
+    Open Browser To LoginPage
+    Element Should Be Visible    ${usernameInput}
+    Element Should Be Enabled    ${usernameInput}
+    Element Should Be Visible    ${passwordInput}
+    Element Should Be Enabled    ${passwordInput}
+
+    Input Text            ${usernameInput}            adminuser
+    Input Password        ${passwordInput}            123456
+
+    Clear Element Text    ${usernameInput}
+    Clear Element Text    ${passwordInput}
+
+    Sleep   ${delay}
+
     Close Browser
